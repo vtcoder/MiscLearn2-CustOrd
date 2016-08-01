@@ -6,6 +6,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNet.Diagnostics;
 
 namespace MiscLearn2_CustOrder_UI
 {
@@ -24,6 +25,8 @@ namespace MiscLearn2_CustOrder_UI
             //app.Map("/test", app2 => MyConfigure(app2));
 
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
+
+            app.UseDeveloperExceptionPage();
 
             app.UseMvc(routes =>
             {
