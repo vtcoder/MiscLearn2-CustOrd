@@ -22,11 +22,11 @@ namespace MiscLearn2_CustOrder_UI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            //app.Map("/test", app2 => MyConfigure(app2));
+            app.UseDeveloperExceptionPage();
 
             app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
-            app.UseDeveloperExceptionPage();
+            app.UseStaticFiles();   
 
             app.UseMvc(routes =>
             {
@@ -34,21 +34,6 @@ namespace MiscLearn2_CustOrder_UI
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
-
-        public void MyConfigure(IApplicationBuilder app)
-        {
-            app.UseIISPlatformHandler();
-
-            //app.UseMvc(routeBuilder =>
-            //{
-            //    routeBuilder.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            //});
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
         }
 
         // Entry point for the application.
