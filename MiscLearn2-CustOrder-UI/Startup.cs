@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNet.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics;
+using System.IO;
 
 namespace MiscLearn2_CustOrder_UI
 {
@@ -24,7 +25,7 @@ namespace MiscLearn2_CustOrder_UI
         {
             app.UseDeveloperExceptionPage();
 
-            app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
+            //app.UseIISPlatformHandler(options => options.AuthenticationDescriptions.Clear());
 
             app.UseStaticFiles();   
 
@@ -37,6 +38,6 @@ namespace MiscLearn2_CustOrder_UI
         }
 
         // Entry point for the application.
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+        //public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }
